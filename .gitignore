@@ -2,6 +2,6 @@
 *.tfstate.backup
 .terraform
 *.iml
-.pub
-.key
-.tfvars
+*.pub
+*.key
+*.tfvars
