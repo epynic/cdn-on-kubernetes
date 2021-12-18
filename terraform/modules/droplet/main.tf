@@ -17,6 +17,7 @@ resource "digitalocean_droplet" "instance" {
   region   = var.instance_region
   size     = var.instance_size
   ssh_keys = [digitalocean_ssh_key.instance_keypair.fingerprint]
+  user_data = var.user_data
 }
 
 resource "digitalocean_ssh_key" "instance_keypair" {

@@ -5,4 +5,5 @@
 *.pub
 *.key
 *.tfvars
-.terraform.lock.hcl
+*.terraform.lock.hcl
+.config

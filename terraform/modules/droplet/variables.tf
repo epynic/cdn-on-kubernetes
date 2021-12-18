@@ -44,3 +44,8 @@ variable "ssh_public_key" {
   default = "./ssh/devkeypair.pub"
   description = "Droplet SSH key local path"
 }
+
+variable "user_data" {
+  description = "(Optional) A string of the desired User Data for the Droplet."
+  default     = "exit 0"
+}
