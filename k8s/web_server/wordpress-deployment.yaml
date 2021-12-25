@@ -65,7 +65,7 @@ spec:
         tier: frontend
     spec:
       containers:
-        - image: epynic/do-k8s-challenge-wordpress:47
+        - image: epynic/do-k8s-challenge-wordpress:49
           name: wordpress
           env:
             - name: WORDPRESS_DB_HOST
@@ -79,9 +79,9 @@ spec:
           ports:
             - containerPort: 80
               name: wordpress
-#           volumeMounts:
-#             - name: wordpress-persistent-storage
-#               mountPath: /var/www/html
+          volumeMounts:
+            - name: wordpress-persistent-storage
+              mountPath: /var/www/html
       volumes:
         - name: wordpress-persistent-storage
           persistentVolumeClaim:
