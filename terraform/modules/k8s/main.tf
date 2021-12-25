@@ -30,16 +30,14 @@ resource "digitalocean_project" "project" {
   environment = var.project_environment
   resources   = [digitalocean_kubernetes_cluster.k8s_cluster.urn]
 
-
    # this should be in the cluster - just a work-around so the state-file is populated only when local-exec runs
   provisioner "local-exec" {
     # working_dir = "${path.module}"
     command = <<EOF
-      pwd
       jq -r \
         '.resources[]
         | select(.type == "digitalocean_kubernetes_cluster")
-        | .instances[].attributes.kube_config[].raw_config' terraform.tfstate > kubeconfig/.config && cp kubeconfig/.config ~/.kube/config
+        | .instances[].attributes.kube_config[].raw_config' terraform.tfstate > kubeconfig/config
     EOF
   }
 }

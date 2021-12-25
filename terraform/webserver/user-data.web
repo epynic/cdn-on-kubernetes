@@ -1,5 +1,0 @@
-#cloud-config
-runcmd:
-  - apt-get update
-  - apt install -y nginx
-  - 'echo "<html><body><center><h2>$(hostname)</h2></center></body></html>" > /var/www/html/index.html'
