@@ -14,37 +14,37 @@ spec:
     tier: frontend
   type: LoadBalancer
 ---
-# apiVersion: v1
-# kind: PersistentVolume
-# metadata:
-#   name: wp-pv-volume
-#   labels:
-#     type: local
-# spec:
-#   storageClassName: manual
-#   capacity:
-#     storage: 10Gi
-#   accessModes:
-#     - ReadWriteOnce
-#   hostPath:
-#     path: "/tmp/wp/data"
-#   persistentVolumeReclaimPolicy: Recycle
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: wp-pv-volume
+  labels:
+    type: local
+spec:
+  storageClassName: manual
+  capacity:
+    storage: 10Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: "/tmp/wp/data"
+  persistentVolumeReclaimPolicy: Recycle
 ---
-# apiVersion: v1
-# kind: PersistentVolumeClaim
-# metadata:
-#   name: wp-pv-claim
-#   labels:
-#     app: wordpress
-# spec:
-#   storageClassName: manual
-#   accessModes:
-#     - ReadWriteOnce
-#   resources:
-#     requests:
-#       storage: 10Gi
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: wp-pv-claim
+  labels:
+    app: wordpress
+spec:
+  storageClassName: manual
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 10Gi
 ---
-apiVersion: apps/v1   # versions before 1.9.0 use apps/v1beta2
+apiVersion: apps/v1 
 kind: Deployment
 metadata:
   name: wordpress
@@ -64,6 +64,13 @@ spec:
         app: wordpress
         tier: frontend
     spec:
+      initContainers:
+      - name: init-theme
+        image: "alpine:3"
+        command: ["sh", "-c", "if [ -d /var/www/html/wp-content/themes/twentytwentyone ]; then rm -rf /var/www/html/wp-content/themes/twentytwentyone; fi"]
+        volumeMounts:
+          - name: wordpress-persistent-storage
+            mountPath: /var/www/html/wp-content
       containers:
         - image: epynic/do-k8s-challenge-wordpress:49
           name: wordpress
