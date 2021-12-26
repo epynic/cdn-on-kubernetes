@@ -1,20 +1,3 @@
-variable "cluster_name" {
-    description = "Cluster name"
-}
-
-variable "cluster_region" {
-    description = "Cluster region"
-}
-
-variable "cluster_version" {
-    default = "1.21.5-do.0"
-    description = "Cluster version"
-}
-
-variable "node_count" {
-    description = "Node count"
-}
-
 variable "project_name" {
   default = "kube-cdn"
   description = "DO Project Name"
@@ -33,10 +16,4 @@ variable "project_purpose" {
 variable "project_environment" {
   default = "Development"
   description = "DO Project ENV"
-}
-
-
-variable "module_name" {
-  default = "kube-cdn"
-  description = "DO Project Name"
 }
