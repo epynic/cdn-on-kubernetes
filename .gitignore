@@ -6,4 +6,4 @@
 *.key
 *.tfvars
 *.terraform.lock.hcl
-.config
+config
