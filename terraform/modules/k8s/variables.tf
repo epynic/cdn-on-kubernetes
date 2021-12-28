@@ -37,6 +37,6 @@ variable "project_environment" {
 
 
 variable "module_name" {
-  default = "kube-cdn"
+  default = "config"
   description = "DO Project Name"
 }
