@@ -6,13 +6,13 @@ Part of the  DeployHQ - Challenge https://www.digitalocean.com/community/pages/k
 ## What is a CDN 
 In simple terms a content delivery network (CDN) refers to a geographically distributed group of servers (proxy servers) that stores a copy of the `origin` (webapp) close to the users. 
 
-`origin` are just web apps and the CDN functions as a proxy server.
+`origins` are just web apps and the CDN functions as a proxy server.
 
 <img src='https://www.cloudflare.com/img/learning/cdn/what-is-a-cdn/what-is-a-cdn.png' width='90%'>
 
 [https://www.cloudflare.com/en-in/learning/cdn/what-is-a-cdn/](https://www.cloudflare.com/en-in/learning/cdn/what-is-a-cdn/)
 
-#
+
 
 ## Prerequisites
 To complete this tutorial, you’ll need:
