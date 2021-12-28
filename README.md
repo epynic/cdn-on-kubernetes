@@ -9,7 +9,7 @@ In simple terms a content delivery network (CDN) refers to a geographically dist
 `origins` are just web apps and the CDN functions as a proxy server.
 
 ![https://www.cloudflare.com/en-in/learning/cdn/what-is-a-cdn/](
-https://www.cloudflare.com/img/learning/cdn/what-is-a-cdn/what-is-a-cdn.png)
+https://www.cloudflare.com/img/learning/cdn/what-is-a-cdn/what-is-a-cdn.png | width=100)
 https://www.cloudflare.com/en-in/learning/cdn/what-is-a-cdn/
 
 
