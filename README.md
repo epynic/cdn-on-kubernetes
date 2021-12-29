@@ -152,6 +152,7 @@ Update the Orgin Loadbalancer IP in the nginx config file and commit.
 
 Thats all we would now have a complete CI/CD pipeline that when we make a code change in the repo would start the build in circle-ci to build the container image and push the image to dockerhub and update the k8s manifest file in git and argocd with sense the cofiguration drift in the manifest and apply the latest manifiest files.
 
+Ofcourse I would say this project can be a starter for a CDN project in k8s, and there are much more things pending like geoDNS routing, cache invalidations and much more to have a fully functional DNS.
 
 
 🍻 Cheers Digital Ocean. https://try.digitalocean.com/kubernetes-in-minutes/
