@@ -35,7 +35,7 @@ spec:
         tier: cache
     spec:
       containers:
-        - image: epynic/do-k8s-challenge-nginx:11
+        - image: epynic/do-k8s-challenge-nginx:14
           name: nginx
           ports:
             - containerPort: 80
