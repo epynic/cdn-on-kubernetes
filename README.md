@@ -5,6 +5,7 @@ Part of the  DeployHQ - Challenge https://www.digitalocean.com/community/pages/k
 #### Objective :
 To have a complete CI/CD pipeline to build and deploy in a k8s environment ie after a code push in the application repo, CI pipeline should build the container image and push it to dockerhub and update the k8s manifest file in git, and finally an CD tool that would apply the latest manifiest files in the k8s cluster.
 
+Stack: #circleci #argocd #k8s #wordpress #nginx
 
 #
 
